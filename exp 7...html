@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .label {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: larger;
+        }
+
+        .input {
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+        button{
+            color: black;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function sales() {
+            let salesperson = [];
+            let range = [0, 0, 0, 0, 0, 0, 0, 0, 0,0];
+            let salary = [];
+            salesperson[0] = document.getElementById("1").value;
+            salesperson[1] = document.getElementById("2").value;
+            salesperson[2] = document.getElementById("3").value;
+            salesperson[3] = document.getElementById("4").value;
+            salesperson[4] = document.getElementById("5").value;
+            salesperson[5] = document.getElementById("6").value;
+            salesperson[6] = document.getElementById("7").value;
+
+            for (var i = 0; i < 7; i++) {
+                salary[i] = 200 + (salesperson[i] * 0.09);
+            }
+            for (i = 0; i < 7; i++) {
+                if (salary[i] < 300) { range[0]++; }
+                else if (salary[i] < 400) { range[1]++; }
+                else if (salary[i] < 500) { range[2]++; }
+                else if (salary[i] < 600) { range[3]++; }
+                else if (salary[i] < 700) { range[4]++; }
+                else if (salary[i] < 800) { range[5]++; }
+                else if (salary[i] < 900) { range[6]++; }
+                else if (salary[i] < 1000) { range[7]++; }
+                else if (salary[i] >= 1000) { range[8]++; }
+            }
+
+            for (i = 0; i < 8; i++) {
+                document.write( "$"+(100 * (i + 2)) + " to " + "$"+(100 * (i + 3) - 1) + ":- " + range[i] + "<br>");
+            }
+            document.write( "$"+(100 * (i + 2)) + " and above :-" + range[8] + "<br>");
+
+
+        }
+
+    </script>
+    <form action="" method="get">
+        <label for="1" class="label">1. Enter gross sales of first sales person</label>
+        <br>
+        <input type="number" id="1" class="input" placeholder="0">
+        <br>
+        <label for="2" class="label">2. Enter gross sales of second sales person</label>
+        <br>
+        <input type="number" id="2" class="input" placeholder="0">
+        <br>
+        <label for="3" class="label">3. Enter gross sales of third sales person</label>
+        <br>
+        <input type="number" id="3" class="input" placeholder="0">
+        <br>
+        <label for="4" class="label">4. Enter gross sales of fourth sales person</label>
+        <br>
+        <input type="number" id="4" class="input" placeholder="0">
+        <br>
+        <label for="5" class="label">5. Enter gross sales of fivth sales person</label>
+        <br>
+        <input type="number" id="5" class="input" placeholder="0">
+        <br>
+        <label for="6" class="label">6. Enter gross sales of sixth sales person</label>
+        <br>
+        <input type="number" id="6" class="input" placeholder="0">
+        <br>
+        <label for="7" class="label">7. Enter gross sales of seventh sales person</label>
+        <br>
+        <input type="number" id="7" class="input" placeholder="0">
+        <br> <br>
+        <button style="margin-left: 20px; width: 80px; height: 30px;" onclick="sales()" type="submit">Submit</button>
+
+    </form>
+    <div class="result">
+
+    </div>
+</body>
+
+</html>
